@@ -17,4 +17,4 @@ creador de certificados en pdf
 git clone https://github.com/servlet05/certificadospdf
 cd certificadospdf
 pip install -r requirements.txt
-python app.py
+python3 app.py
