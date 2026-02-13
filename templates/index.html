@@ -1,7 +1,8 @@
+cat > templates/index.html << 'EOF'
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Certifica2 · Generador inteligente de constancias</title>
+    <title>Certifica2 · Generador de constancias</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -15,7 +16,6 @@
             border: none;
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            backdrop-filter: blur(10px);
             background: rgba(255,255,255,0.95);
         }
         .card-header {
@@ -32,17 +32,6 @@
             font-size: 20px;
             border-radius: 50px;
             color: white;
-            transition: all 0.3s;
-        }
-        .btn-generar:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-        .preview-box {
-            background: #f8f9fa;
-            border-radius: 15px;
-            padding: 20px;
-            border: 2px dashed #0a4d7a;
         }
     </style>
 </head>
@@ -53,49 +42,36 @@
                 <div class="card">
                     <div class="card-header">
                         <h1 class="h2 mb-0">📜 Certifica2</h1>
-                        <p class="mb-0 mt-2 opacity-75">Generador profesional de constancias en PDF</p>
+                        <p class="mb-0 mt-2">Generador profesional de constancias en PDF</p>
                     </div>
                     <div class="card-body p-5">
-                        
                         <form action="/generar" method="post">
-    
-    <!-- Plantilla fija (moderna) - ¡SIN SELECTOR! -->
-    <input type="hidden" name="plantilla" value="moderna">
-    
-    <!-- Datos del participante -->
-    <div class="mb-4">
-        <label class="form-label fw-bold">👤 Nombre completo:</label>
-        <input type="text" name="nombre" class="form-control form-control-lg" 
-               placeholder="Ej. Ana María González" required>
-    </div>
-    
-    <div class="mb-4">
-        <label class="form-label fw-bold">📚 Curso / Taller:</label>
-        <input type="text" name="curso" class="form-control form-control-lg" 
-               placeholder="Ej. Python para principiantes" required>
-    </div>
-    
-    <div class="mb-4">
-        <label class="form-label fw-bold">📅 Fecha:</label>
-        <input type="text" name="fecha" class="form-control form-control-lg" 
-               placeholder="DD/MM/AAAA (dejar vacío para hoy)">
-    </div>
-    
-    <!-- Botón de generación -->
-    <div class="text-center mt-5">
-        <button type="submit" class="btn btn-generar btn-lg px-5">
-            ⚡ Generar PDF
-        </button>
-    </div>
-    
-</form>
-                        
-                        <hr class="my-5">
-                        
-                        <div class="preview-box text-center text-muted">
-                            <p class="mb-0">✨ Tu constancia se generará en formato PDF listo para imprimir</p>
-                            <small>Las plantillas son 100% responsivas · Texto autoajustable · Folio único</small>
-                        </div>
+                            <input type="hidden" name="plantilla" value="moderna">
+                            
+                            <div class="mb-4">
+                                <label class="form-label fw-bold">👤 Nombre completo:</label>
+                                <input type="text" name="nombre" class="form-control form-control-lg" 
+                                       placeholder="Ej. Ana María González" required>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="form-label fw-bold">📚 Curso / Taller:</label>
+                                <input type="text" name="curso" class="form-control form-control-lg" 
+                                       placeholder="Ej. Python para principiantes" required>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="form-label fw-bold">📅 Fecha:</label>
+                                <input type="text" name="fecha" class="form-control form-control-lg" 
+                                       placeholder="DD/MM/AAAA (dejar vacío para hoy)">
+                            </div>
+                            
+                            <div class="text-center mt-5">
+                                <button type="submit" class="btn btn-generar btn-lg px-5">
+                                    ⚡ Generar PDF
+                                </button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -103,3 +79,4 @@
     </div>
 </body>
 </html>
+EOF
