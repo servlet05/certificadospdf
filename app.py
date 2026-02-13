@@ -26,12 +26,12 @@ def generar():
     
     # 2. Renderizar HTML con los datos
     html_string = render_template(
-        PLANTILLAS[plantilla_id],
-        nombre=nombre,
-        curso=curso,
-        fecha=fecha,
-        folio=f"CONST-{datetime.now().strftime('%Y%m%d%H%M%S')}"
-    )
+    'moderna.html',  # <--- SOLO USA ESTA PLANTILLA
+    nombre=nombre,
+    curso=curso,
+    fecha=fecha,
+    folio=f"CONST-{datetime.now().strftime('%Y%m%d%H%M%S')}"
+)
     
     # 3. Convertir HTML a PDF (MAGIA!)
     pdf = HTML(string=html_string).write_pdf()
