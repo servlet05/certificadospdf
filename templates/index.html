@@ -58,44 +58,37 @@
                     <div class="card-body p-5">
                         
                         <form action="/generar" method="post">
-                            
-                            <!-- Selector de plantilla -->
-                            <div class="mb-4">
-                                <label class="form-label fw-bold">🎨 Plantilla:</label>
-                                <select name="plantilla" class="form-select form-select-lg">
-                                    <option value="moderna">Moderna · Azul corporativo</option>
-                                    <option value="clasica">Clásica · Pergamino</option>
-                                    <option value="minimalista">Minimalista · Elegante</option>
-                                </select>
-                            </div>
-                            
-                            <!-- Datos del participante -->
-                            <div class="mb-4">
-                                <label class="form-label fw-bold">👤 Nombre completo:</label>
-                                <input type="text" name="nombre" class="form-control form-control-lg" 
-                                       placeholder="Ej. Ana María González" required>
-                            </div>
-                            
-                            <div class="mb-4">
-                                <label class="form-label fw-bold">📚 Curso / Taller:</label>
-                                <input type="text" name="curso" class="form-control form-control-lg" 
-                                       placeholder="Ej. Python para principiantes" required>
-                            </div>
-                            
-                            <div class="mb-4">
-                                <label class="form-label fw-bold">📅 Fecha:</label>
-                                <input type="text" name="fecha" class="form-control form-control-lg" 
-                                       placeholder="DD/MM/AAAA (dejar vacío para hoy)">
-                            </div>
-                            
-                            <!-- Botón de generación -->
-                            <div class="text-center mt-5">
-                                <button type="submit" class="btn btn-generar btn-lg px-5">
-                                    ⚡ Generar PDF
-                                </button>
-                            </div>
-                            
-                        </form>
+    
+    <!-- Plantilla fija (moderna) - ¡SIN SELECTOR! -->
+    <input type="hidden" name="plantilla" value="moderna">
+    
+    <!-- Datos del participante -->
+    <div class="mb-4">
+        <label class="form-label fw-bold">👤 Nombre completo:</label>
+        <input type="text" name="nombre" class="form-control form-control-lg" 
+               placeholder="Ej. Ana María González" required>
+    </div>
+    
+    <div class="mb-4">
+        <label class="form-label fw-bold">📚 Curso / Taller:</label>
+        <input type="text" name="curso" class="form-control form-control-lg" 
+               placeholder="Ej. Python para principiantes" required>
+    </div>
+    
+    <div class="mb-4">
+        <label class="form-label fw-bold">📅 Fecha:</label>
+        <input type="text" name="fecha" class="form-control form-control-lg" 
+               placeholder="DD/MM/AAAA (dejar vacío para hoy)">
+    </div>
+    
+    <!-- Botón de generación -->
+    <div class="text-center mt-5">
+        <button type="submit" class="btn btn-generar btn-lg px-5">
+            ⚡ Generar PDF
+        </button>
+    </div>
+    
+</form>
                         
                         <hr class="my-5">
                         
