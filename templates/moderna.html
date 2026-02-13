@@ -1,3 +1,4 @@
+cat > templates/moderna.html << 'EOF'
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +15,6 @@
             background: white;
             height: 100vh;
             box-sizing: border-box;
-            background-image: radial-gradient(circle at 20% 30%, rgba(200, 200, 255, 0.2) 0%, transparent 30%);
         }
         .certificate {
             border: 20px solid #0a4d7a;
@@ -60,14 +60,6 @@
             font-size: 14px;
             color: #999;
         }
-        .sello {
-            position: absolute;
-            bottom: 20px;
-            left: 40px;
-            font-size: 20px;
-            color: #c5a059;
-            font-style: italic;
-        }
     </style>
 </head>
 <body>
@@ -75,11 +67,11 @@
         <h1>CONSTANCIA</h1>
         <p style="font-size: 24px;">Otorgada a:</p>
         <div class="nombre">{{ nombre }}</div>
-        <p style="font-size: 24px;">Por haber completado satisfactoriamente el curso de:</p>
+        <p style="font-size: 24px;">Por haber completado el curso de:</p>
         <div class="curso">{{ curso }}</div>
         <div class="fecha">Expedida el {{ fecha }}</div>
-        <div class="sello">📜 Válida en todo el territorio</div>
         <div class="folio">Folio: {{ folio }}</div>
     </div>
 </body>
 </html>
+EOF
